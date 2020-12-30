@@ -20,7 +20,9 @@ class Human extends Inhabitant {
     this.hands = 2;
   }
   toString() {
-    return `${super.toString()}; ` + `hands: ${this.hands}; legs:${this.legs};`;
+    return `${super.toString()}; ${["hands", "legs"]
+      .map((prop) => `${prop}: ${this[prop]}`)
+      .join("; ")};`;
   }
 }
 class Man extends Human {
@@ -37,20 +39,18 @@ class Dog extends Inhabitant {
   constructor(name, gender, saying, friends) {
     super("dog", name, gender, saying, friends);
     this.legs = 4;
-    this.hands = 0;
   }
   toString() {
-    return `${super.toString()}; ` + `hands: ${this.hands}; legs:${this.legs};`;
+    return `${super.toString()}; ` + `legs: ${this.legs};`;
   }
 }
 class Cat extends Inhabitant {
   constructor(name, gender, saying, friends) {
     super("cat", name, gender, saying, friends);
     this.legs = 4;
-    this.hands = 0;
   }
   toString() {
-    return `${super.toString()}; ` + `hands: ${this.hands}; legs:${this.legs};`;
+    return `${super.toString()}; ` + `legs: ${this.legs};`;
   }
 }
 class CatWoman extends Inhabitant {
@@ -60,7 +60,9 @@ class CatWoman extends Inhabitant {
     this.hands = 2;
   }
   toString() {
-    return `${super.toString()}; ` + `hands: ${this.hands}; legs:${this.legs};`;
+    return `${super.toString()}; ${["hands", "legs"]
+      .map((prop) => `${prop}: ${this[prop]}`)
+      .join("; ")};`;
   }
 }
 
