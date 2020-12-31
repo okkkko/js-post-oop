@@ -20,9 +20,10 @@ class Human extends Inhabitant {
     this.hands = 2;
   }
   toString() {
-    return `${super.toString()}; ${["hands", "legs"]
-      .map((prop) => `${prop}: ${this[prop]}`)
-      .join("; ")};`;
+    return [
+      super.toString(),
+      ...["hands", "legs"].map((prop) => `${prop}: ${this[prop]}`),
+    ].join("; ");
   }
 }
 class Man extends Human {
@@ -60,9 +61,10 @@ class CatWoman extends Inhabitant {
     this.hands = 2;
   }
   toString() {
-    return `${super.toString()}; ${["hands", "legs"]
-      .map((prop) => `${prop}: ${this[prop]}`)
-      .join("; ")};`;
+    return [
+      super.toString(),
+      ...["hands", "legs"].map((prop) => `${prop}: ${this[prop]}`),
+    ].join("; ");
   }
 }
 
